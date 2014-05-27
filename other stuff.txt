@@ -1,0 +1,123 @@
+void beamshoot()
+{
+	static int iDelay = 0;
+	if (iDelay == 0)
+	{
+		if (IsKeyDown(KEY_SPECIAL+39))
+		{
+		MoveSprite (beam.sprite, player1.position.x + 5, player1.position.y-2);
+		}
+	}
+	if (iDelay > 0)
+	{
+		iDelay = iDelay - 1;
+	}
+}
+void orbtest()
+{
+	static int iDelay = 0;
+	if (iDelay == 0)
+		{
+			orb.width = orb.width - 3;
+			orb.height = orb.height - 3;
+			ORB_W = ORB_W - 3;
+			ORB_H = ORB_H - 3;
+			iDelay = 5;
+			DrawSprite (orb.sprite);
+		}
+
+	if (iDelay > 0)
+		{
+			iDelay = iDelay - 1;
+		}
+	MoveSprite (orb.sprite, player1.position.x, player1.position.y);
+}
+
+
+
+
+// Create the array of 20 boolets
+//bullet bulletArray[20];
+//void CreateBulletArray()
+//{
+//	// Purpose
+//	//		to go through the entire array and create bullets
+//	// iterates through the array
+//	for (int iArrayPos = 0, iArrayMax = 20; // THIS MIGHT BE A PROBLEM
+//		iArrayPos <= iArrayMax;
+//		iArrayPos++)
+//	{
+//		// gives each bullet a sprite
+//		bulletArray[iArrayPos].SetSprite(CreateSprite("./images/laser.png", 8, 8, true));
+//	}
+//}
+//void MoveBulletArray()
+//{
+//	for (int iArrayPos = 0, iArrayMax = 20; // THIS MIGHT BE A PROBLEM
+//		iArrayPos <= iArrayMax;
+//		iArrayPos++)
+//	{
+//		// bulletArray[iArrayPos]
+//
+//		if (bulletArray[iArrayPos].GetIsActive() == true)
+//		{
+//			MoveSprite(bulletArray[iArrayPos].GetSprite(), bulletArray[iArrayPos].GetPosX() +5, bulletArray[iArrayPos].GetPosY());
+//		}
+//	}
+//}
+//void DrawBulletArray()
+//{
+//	for (int iArrayPos = 0, iArrayMax = 20; // THIS MIGHT BE A PROBLEM
+//		iArrayPos <= iArrayMax;
+//		iArrayPos++)
+//	{
+//		// gives each bullet a sprite
+//		DrawSprite(bulletArray[iArrayPos].GetSprite() );	
+//	}
+//}
+//void DestroyBulletArray()
+//{
+//	for (int iArrayPos = 0, iArrayMax = 20; // THIS MIGHT BE A PROBLEM
+//		iArrayPos <= iArrayMax;
+//		iArrayPos++)
+//	{
+//		// gives each bullet a sprite
+//		DestroySprite(bulletArray[iArrayPos].GetSprite());		
+//	}
+//}
+//void pshootbulletarray()
+//// go through the array and find a bullet to shoot
+//{
+//	// Loop through the array
+//		// Check each bullet if it's active
+//			// if it's active, then skip (i.e. "continue();" w/o quotes
+//			// if it isn't active
+//				//set bullet position to player position
+//					// set isActive to true
+//}
+
+
+
+void moveboss(movableObject &obj)
+//{ 
+//	if (boss.position.y != player1.position.y)
+//	{
+//		static int ipause = 0;
+//		if (player1.position.y > boss.position.y && ipause == 0)
+//			{
+//				boss.position.y = boss.position.y + 1;
+//				ipause = 5;
+//				MoveSprite (boss.sprite, boss.position.x, boss.position.y);
+//			}
+//		if (player1.position.y < boss.position.y && ipause == 0)
+//			{
+//				boss.position.y = boss.position.y - 1;
+//				ipause = 5;
+//				MoveSprite (boss.sprite, boss.position.x, boss.position.y);
+//			}
+//		if (ipause >0)
+//			{
+//				ipause = ipause - 1;
+//			}
+//	}
+//}

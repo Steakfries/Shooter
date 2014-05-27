@@ -1,0 +1,180 @@
+void moveplayer(movableObject& player)
+{
+
+	float speed = 1;
+	if (IsKeyDown('W') && !IsKeyDown ('A') && !IsKeyDown ('S') && !IsKeyDown ('D') && player1.position.y >= 74)
+		{
+			if (IsKeyDown(KEY_SPECIAL+35))
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerub.png", 150, 150, true); //Up + Boost
+				player1.position.y = player1.position.y - 1.75;
+				
+			}
+			else
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playeru.png", 100, 100, true); //Up
+				player1.position.y = player1.position.y - .75;
+			}
+			DrawSprite (player1.sprite);
+			iplayerDirection = 1;
+		}
+	
+		if (IsKeyDown('S') && !IsKeyDown ('D') && !IsKeyDown ('A') && !IsKeyDown ('W') && player1.position.y <= 712)
+		{
+
+			if (IsKeyDown(KEY_SPECIAL+35) && IsKeyDown('S'))
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerdb.png", 150, 150, true); 
+				player1.position.y = player1.position.y + 1.75;
+			}
+			else
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerd.png", 100, 100, true); 
+				player1.position.y = player1.position.y + .75;
+			}
+			DrawSprite (player1.sprite);
+			iplayerDirection = 2;
+		}
+
+		if (IsKeyDown('A') && !IsKeyDown ('W') && !IsKeyDown ('S') && !IsKeyDown ('D') && player1.position.x >= 69)
+		{
+			
+			if (IsKeyDown(KEY_SPECIAL+35))
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerlb.png", 150, 150, true); 
+				player1.position.x = player1.position.x - 1.75;
+				
+			}
+			else
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerl.png", 100, 100, true); 
+				player1.position.x = player1.position.x - .75;
+				
+			}
+			DrawSprite (player1.sprite);
+			iplayerDirection = 3;
+		}
+		
+		if (IsKeyDown('D') && !IsKeyDown('W') && !IsKeyDown ('A') && !IsKeyDown ('S') && player1.position.x <= 1211)
+		{
+			
+			if (IsKeyDown(KEY_SPECIAL+35))
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerrb.png", 150, 150, true); 
+				player1.position.x = player1.position.x + 1.75;
+				
+			}
+			else
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerr.png", 100, 100, true); 
+				player1.position.x = player1.position.x + .75;
+				
+			}
+			DrawSprite (player1.sprite);
+			iplayerDirection = 4;
+		}
+
+		if (IsKeyDown('W') && IsKeyDown('D') && player1.position.y >= 74 && player1.position.x <= 1214)
+		{
+		
+		if (IsKeyDown(KEY_SPECIAL+35))
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerdi1b.png", 150, 150, true); 
+				player1.position.y = player1.position.y - 1.75;
+				player1.position.x = player1.position.x + 1.75;
+				
+			}
+			else
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerdi1.png", 100, 100, true); 
+				player1.position.y = player1.position.y - .75;
+				player1.position.x = player1.position.x + .75;
+				
+			}
+		DrawSprite (player1.sprite);
+		iplayerDirection = 5;
+		}
+
+		if (IsKeyDown('W') && IsKeyDown('A') && player1.position.y >= 74 && player1.position.x >= 69)
+		{
+		
+		if (IsKeyDown(KEY_SPECIAL+35))
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerdi4b.png", 150, 150, true); 
+				player1.position.y = player1.position.y - 1.75;
+				player1.position.x = player1.position.x - 1.75;
+				
+			}
+			else
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerdi4.png", 100, 100, true); 
+				player1.position.y = player1.position.y - .75;
+				player1.position.x = player1.position.x - .75;
+				
+			}
+		DrawSprite (player1.sprite);
+		iplayerDirection = 6;
+
+		}
+
+		if (IsKeyDown('S') && IsKeyDown('D') && player1.position.y <= 712 && player1.position.x <= 1214)
+		{
+
+			if (IsKeyDown(KEY_SPECIAL+35))
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerdi2b.png", 150, 150, true); 
+				player1.position.y = player1.position.y + 1.75;
+				player1.position.x = player1.position.x + 1.75;
+				
+			}
+			else
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerdi2.png", 100, 100, true); 
+				player1.position.y = player1.position.y + .75;
+				player1.position.x = player1.position.x + .75;
+				
+			}
+		DrawSprite (player1.sprite);
+		iplayerDirection = 7;
+
+		}
+
+		if (IsKeyDown('S') && IsKeyDown('A') && player1.position.y <= 712 && player1.position.x >= 69) //fix 3 button issue
+		{
+		
+			if (IsKeyDown(KEY_SPECIAL+35))
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerdi3b.png", 150, 150, true); 
+				player1.position.y = player1.position.y + 1.75;
+				player1.position.x = player1.position.x - 1.75;
+				
+			}
+			else
+			{
+				DestroySprite (player1.sprite);
+				player1.sprite = CreateSprite("./images/player/playerdi3.png", 100, 100, true); 
+				player1.position.y = player1.position.y + .75;
+				player1.position.x = player1.position.x - .75;
+				
+			}
+
+		DrawSprite (player1.sprite);
+		iplayerDirection = 8;
+
+	}
+}
